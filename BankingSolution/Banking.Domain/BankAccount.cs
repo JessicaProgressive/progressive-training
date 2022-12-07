@@ -2,14 +2,30 @@
 {
     public class BankAccount
     {
+        public enum BankAccountType { Standard, Gold }
+
+
         private decimal _balance = 5000;
+        public BankAccountType AccountType = BankAccountType.Gold;
+
         public BankAccount()
         {
         }
 
         public void Deposit(decimal amountToDeposit)
         {
-            _balance += amountToDeposit;
+            var bonus = 0M;
+            switch (AccountType)
+            {
+                case BankAccountType.Standard:
+                    break;
+                case BankAccountType.Gold:
+                    bonus = amountToDeposit * .1M; 
+                    break;
+                default:
+                    break;
+            }
+            _balance += amountToDeposit + bonus;
         }
 
         public decimal GetBalance()
