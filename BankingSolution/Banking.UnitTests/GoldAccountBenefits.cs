@@ -10,7 +10,7 @@ namespace Banking.UnitTests
     public class GoldAccountBenefits
     {
         [Theory]
-        [InlineData(100, 5010)]
+        [InlineData(100, 5110)]
         public void GoldBonusDeposit(decimal amountToDeposit, decimal expectedBalance)
         {
             var account = new GoldAccount();

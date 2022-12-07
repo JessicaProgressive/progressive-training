@@ -8,7 +8,8 @@
 
         public override void Deposit(decimal amountToDeposit)
         {
-            base.Deposit(amountToDeposit * .1M);
+            var bonus = amountToDeposit * .1M;
+            base.Deposit(amountToDeposit + bonus);
         }
     }
 }
