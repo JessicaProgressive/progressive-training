@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Banking.UnitTests.TestDoubles;
 
 namespace Banking.UnitTests;
 
@@ -11,9 +7,9 @@ public class NewAccounts
     [Fact]
     public void HaveTheCorrectOpeningBalance()
     {
-        // Write the Code You Wish You Had (WTCYWYH)
+        // Write the Code You Wish You Had (WTCYWYH)v
         // Given
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICalculateBonuses>().Object);
         // When
         decimal balance = account.GetBalance();
         // Then

@@ -2,13 +2,17 @@
 {
     public class BankAccount
     {
+        private readonly ICalculateBonuses _calculator;
         private decimal _balance = 5000;
-        public BankAccount()
+
+        public BankAccount(ICalculateBonuses calculator)
         {
+            _calculator = calculator;
         }
 
         public void Deposit(decimal amountToDeposit)
         {
+            var bonus = _calculator.GetBonusForDepositOn(_balance, amountToDeposit);
             _balance += amountToDeposit;
         }
 

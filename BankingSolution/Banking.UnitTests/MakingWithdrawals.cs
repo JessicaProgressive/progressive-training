@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banking.UnitTests.TestDoubles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Banking.UnitTests
         public void MakingWithrawalsDecreasesBalance(decimal amountToWithdraw, decimal expected)
         {
             // Arrange
-            var account = new BankAccount();
+            var account = new BankAccount(new DummyBonusCalculator());
             var openingBalance = account.GetBalance();
             // Act
             account.Withdraw(amountToWithdraw);

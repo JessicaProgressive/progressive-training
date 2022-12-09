@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Banking.UnitTests.TestDoubles;
 
 namespace Banking.UnitTests;
 
@@ -12,7 +8,7 @@ public class MakingDeposits
     public void MakingDepositsIncreasesBalance()
     {
         // Given
-        var account = new BankAccount();
+        var account = new BankAccount(new DummyBonusCalculator());
         var openingBalance = account.GetBalance();
         var amountToDeposit = 100M;
         // When

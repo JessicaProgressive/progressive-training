@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Banking.Domain
+{
+    public interface ICalculateBonuses
+    {
+        decimal GetBonusForDepositOn(decimal currentBalance, decimal amountOfDeposit);
+    }
+}
